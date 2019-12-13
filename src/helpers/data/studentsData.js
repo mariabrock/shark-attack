@@ -164,7 +164,7 @@ const students = [
   {
     id: 'student28',
     firstName: 'Right',
-    lastName: 'Sark',
+    lastName: 'Shark',
     isDead: false,
   },
   {
