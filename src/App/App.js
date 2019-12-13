@@ -1,27 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className="btn btn-danger">Shark Button</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import studentsData from '../helpers/data/studentsData';
+
+import LiveStudents from '../components/LiveStudents/LiveStudents';
+import SharkTank from '../components/SharkAttack/SharkAttack';
+import Graveyard from '../components/Graveyard/Graveyard';
+
+class App extends React.Component {
+  state = {
+    students: [],
+  }
+
+  componentDidMount() {
+    const students = studentsData.getStudents();
+    this.setState({ students });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <LiveStudents students={this.state.students} />
+        <header className="App-header">
+        <img src="https://c7.uihere.com/files/231/885/81/shark-attack-mug-gift-illustration-shark-heart-cliparts.jpg" alt="shark attack" />
+          <button className="btn btn-primary">Shark Attack!</button>
+        </header>
+        <SharkTank students={this.state.students} livingStudents={this.livingStudents} dearlyDeparted={this.dearlyDeparted} followTheLight={this.followTheLight} />
+        <Graveyard students={this.state.students} followTheLight={this.followTheLight} />
+      </div>
+    );
+  }
 }
 
 export default App;
