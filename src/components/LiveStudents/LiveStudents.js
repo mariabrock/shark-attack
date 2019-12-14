@@ -1,6 +1,6 @@
 import './LiveStudents.scss';
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import studentShape from '../../helpers/propz/studentTypes';
 
@@ -8,6 +8,9 @@ import studentShape from '../../helpers/propz/studentTypes';
 class LiveStudents extends React.Component {
     static propTypes = {
       students: studentShape.studentShape,
+      livingStudents: PropTypes.func,
+      dearlyDeparted: PropTypes.func,
+      followTheLight: PropTypes.func,
     }
 
     render() {

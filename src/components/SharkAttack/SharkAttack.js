@@ -1,13 +1,23 @@
-import './SharkAttack.scss';
-import React from 'react';
+// import './SharkAttack.scss';
+// import React from 'react';
 // import PropTypes from 'prop-types';
 
-class SharkTank extends React.Component {
-  render() {
-    return (
-        <div className="shark-tank"></div>
-    );
-  }
-}
+// import studentShape from '../../helpers/propz/studentTypes';
 
-export default SharkTank;
+// class SharkTank extends React.Component {
+// static propTypes = {
+//   students: this.propTypes.arrayOf(studentShape.studentShape),
+//   livingStudents: PropTypes.func,
+//   dearlyDeparted: PropTypes.func,
+//   followTheLight: PropTypes.func,
+// }
+
+// render() {
+//   return (
+//         <div className="shark-tank">
+//         </div>
+//   );
+// }
+// }
+
+// export default SharkTank;

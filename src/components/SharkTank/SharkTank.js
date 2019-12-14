@@ -9,6 +9,9 @@ import studentShape from '../../helpers/propz/studentTypes';
 class SharkTank extends React.Component {
     static propTypes = {
       students: PropTypes.arrayOf(studentShape.studentShape),
+      livingStudents: PropTypes.func,
+      dearlyDeparted: PropTypes.func,
+      followTheLight: PropTypes.func,
     }
 
     render() {
