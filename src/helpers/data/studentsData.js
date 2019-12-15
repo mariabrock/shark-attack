@@ -193,19 +193,14 @@ const livingStudents = (studentId) => {
   // students[studentIndex ].isDead = false;
 };
 
-const dearlyDeparted = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isDead = true;
-    }
-  });
-};
+// const dearlyDeparted = (studentId) => {
+//   students.forEach((response) => {
+//     if (response.id === studentId) {
+//       response.isDead = true;
+//     }
+//   });
+// };
 
-const followTheLight = () => {};
+// const followTheLight = () => {};
 
-export default {
-  getStudents,
-  livingStudents,
-  dearlyDeparted,
-  followTheLight,
-};
+export default { getStudents, livingStudents };
