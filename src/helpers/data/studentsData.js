@@ -141,7 +141,7 @@ const students = [
     id: 'student24',
     firstName: 'Callan',
     lastName: 'Morrison',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student25',
@@ -165,7 +165,7 @@ const students = [
     id: 'student28',
     firstName: 'Right',
     lastName: 'Shark',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student29',
@@ -193,8 +193,16 @@ const livingStudents = () => {
   return notDead; // returns an array of students who are not dead
 };
 
-// const dearlyDeparted = () => {};
+const dearlyDeparted = () => {
+  const veryDead = [];
+  students.forEach((student) => {
+    if (student.isDead === true) {
+      veryDead.push(student);
+    }
+  });
+  return veryDead;
+};
 
 // const followTheLight = () => {};
 
-export default { getStudents, livingStudents };
+export default { getStudents, livingStudents, dearlyDeparted };
