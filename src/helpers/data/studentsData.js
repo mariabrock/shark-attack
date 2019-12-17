@@ -164,7 +164,7 @@ const students = [
   {
     id: 'student28',
     firstName: 'Right',
-    lastName: 'Sark',
+    lastName: 'Shark',
     isDead: false,
   },
   {
@@ -183,24 +183,18 @@ const students = [
 
 const getStudents = () => students;
 
-// const livingStudents = (studentId) => {
-//   students.forEach(response => {
-//     if (response.id === studentId) {
-//       response.isDead = false;
-//     }
-//   });
-//   // const studentIndex = students.find(student => student.id === studentId);
-//   // students[studentIndex ].isDead = false;
-// };
+const livingStudents = () => {
+  const notDead = []; // empty array
+  students.forEach((student) => { // loop
+    if (student.isDead === false) {
+      notDead.push(student); // push a student who is not dead into the array
+    }
+  });
+  return notDead; // returns an array of students who are not dead
+};
 
-// const dearlyDeparted = (studentId) => {
-//   students.forEach(response => {
-//     if (response.id === studentId) {
-//       response.isDead = true;
-//     }
-//   });
-// }
+// const dearlyDeparted = () => {};
 
 // const followTheLight = () => {};
 
-export default { getStudents };
+export default { getStudents, livingStudents };

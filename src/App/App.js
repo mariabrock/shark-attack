@@ -1,27 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className="btn btn-danger">Shark Button</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import studentsData from '../helpers/data/studentsData';
+
+import SharkTank from '../components/SharkTank/SharkTank';
+// import Graveyard from '../components/Graveyard/Graveyard';
+
+class App extends React.Component {
+  state = {
+    livingStudents: [],
+  }
+
+  componentDidMount() {
+    const livingStudents = studentsData.livingStudents();
+    this.setState({ livingStudents });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <button className="btn btn-primary">Shark Attack!</button>
+        <SharkTank livingStudents={this.state.livingStudents} />
+        {/* <Graveyard students={this.state.students} followTheLight={this.followTheLight} /> */}
+      </div>
+    );
+  }
 }
 
 export default App;
