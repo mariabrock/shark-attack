@@ -9,8 +9,6 @@ class LiveStudent extends React.Component {
     static propTypes = {
       student: studentShape.studentShape,
       livingStudents: PropTypes.func,
-      // dearlyDeparted: PropTypes.func,
-      // followTheLight: PropTypes.func,
     }
 
     getLiveStudents = (e) => {
