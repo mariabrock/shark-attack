@@ -1,13 +1,13 @@
-import './LiveStudents.scss';
+import './LiveStudent.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import studentShape from '../../helpers/propz/studentShape';
 
 
-class LiveStudents extends React.Component {
+class LiveStudent extends React.Component {
     static propTypes = {
-      students: studentShape.studentShape,
+      student: studentShape.studentShape,
       livingStudents: PropTypes.func,
       // dearlyDeparted: PropTypes.func,
       // followTheLight: PropTypes.func,
@@ -34,4 +34,4 @@ class LiveStudents extends React.Component {
     }
 }
 
-export default LiveStudents;
+export default LiveStudent;
