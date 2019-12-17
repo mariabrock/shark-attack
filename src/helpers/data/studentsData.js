@@ -193,8 +193,16 @@ const livingStudents = () => {
   return notDead; // returns an array of students who are not dead
 };
 
-// const dearlyDeparted = () => {};
+const dearlyDeparted = () => {
+  const veryDead = [];
+  students.forEach((student) => {
+    if (student.isDead === true) {
+      veryDead.push(student);
+    }
+    return veryDead;
+  });
+};
 
 // const followTheLight = () => {};
 
-export default { getStudents, livingStudents };
+export default { getStudents, livingStudents, dearlyDeparted };
