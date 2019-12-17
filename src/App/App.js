@@ -19,10 +19,18 @@ class App extends React.Component {
     this.setState({ dearlyDeparted });
   }
 
+  haveSharkAttackEvent = (e) => {
+    const { livingStudents } = this.state;
+    const student = livingStudents[Math.floor(Math.random() * livingStudents.length)];
+    e.preventDefault();
+    studentsData.followTheLight(student.id);
+    // this.setState({ goats });
+  }
+
   render() {
     return (
       <div className="App">
-        <button className="btn btn-primary">Shark Attack!</button>
+        <button className="btn btn-primary" onClick={this.haveSharkAttackEvent}>Shark Attack!</button>
         <SharkTank livingStudents={this.state.livingStudents} />
         <Graveyard dearlyDeparted={this.state.dearlyDeparted} />
       </div>

@@ -203,6 +203,17 @@ const dearlyDeparted = () => {
   return veryDead;
 };
 
-// const followTheLight = () => {};
+const followTheLight = () => {
+  // goats.forEach((response) => {
+  //   if (response.id === goatId) {
+  //     response.isBusy = true;
+  //   }
+  // });
+};
 
-export default { getStudents, livingStudents, dearlyDeparted };
+export default {
+  getStudents,
+  livingStudents,
+  dearlyDeparted,
+  followTheLight,
+};
