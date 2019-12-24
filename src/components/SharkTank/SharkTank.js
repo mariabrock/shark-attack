@@ -16,7 +16,7 @@ class SharkTank extends React.Component {
 
     return (
       <div className="shark-tank">
-        Shark Tank
+        <h3>Shark Tank</h3>
           {studentCards}
       </div>
     );

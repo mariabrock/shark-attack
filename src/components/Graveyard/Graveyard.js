@@ -16,7 +16,7 @@ class Graveyard extends React.Component {
 
       return (
             <div className="graveyard">
-                Graveyard
+                <h3>Graveyard</h3>
                 {gravestone}
             </div>
       );

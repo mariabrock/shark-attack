@@ -21,7 +21,7 @@ class LiveStudent extends React.Component {
       const { student } = this.props;
 
       return (
-            <div className="card col-3">
+            <div className="card col-2">
                 <img src="https://i.pinimg.com/originals/1e/d2/9e/1ed29eca5273e2eea99f1b79cc52dee9.png" className="card-img-top" alt="" />
                 <div className="card-body">
                     <h6 className="firstName">{student.firstName}</h6>
