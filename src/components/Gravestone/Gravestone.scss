@@ -1,4 +1,9 @@
-.Gravestone {
-    display: flexbox;
+.gravestone {
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    background-color: silver;
+    margin: 1em;
+    left: 1em;
 }

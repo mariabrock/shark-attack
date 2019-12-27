@@ -183,7 +183,7 @@ const students = [
 
 const getStudents = () => students;
 
-const livingStudents = () => {
+const livingStudent = () => {
   const notDead = []; // empty array
   students.forEach((student) => { // loop
     if (student.isDead === false) {
@@ -203,6 +203,16 @@ const dearlyDeparted = () => {
   return veryDead;
 };
 
+const killAStudent = (studentId) => {
+  const deadStudent = students.find((student) => student.id === studentId);
+  deadStudent.isDead = true;
+};
+
 // const followTheLight = () => {};
 
-export default { getStudents, livingStudents, dearlyDeparted };
+export default {
+  getStudents,
+  livingStudent,
+  dearlyDeparted,
+  killAStudent,
+};

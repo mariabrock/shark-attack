@@ -1,6 +1,13 @@
 .App {
   text-align: center;
   font-family: 'Anton', sans-serif;
+  padding-top: 2em;
+}
+
+#holdingDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .App-logo {
