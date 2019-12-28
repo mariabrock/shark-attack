@@ -9,9 +9,6 @@ import SharkTank from '../components/SharkTank/SharkTank';
 import Graveyard from '../components/Graveyard/Graveyard';
 
 class App extends React.Component {
-  static propTypes = {
-    livingStudent: PropTypes.arrayOf(studentShape.studentShape),
-  }
 
   state = {
     livingStudents: [],
@@ -23,14 +20,6 @@ class App extends React.Component {
     this.setState({ livingStudents });
     const dearlyDeparted = studentsData.dearlyDeparted();
     this.setState({ dearlyDeparted });
-  }
-
-  followTheLight = (deadStudentId) => {
-    studentsData.killAStudent(deadStudentId);
-    const deadStudents = studentsData.dearlyBeloved();
-    this.setState({ deadStudents });
-    const livingStudents = studentsData.livingStudents();
-    this.setState({ livingStudents });
   }
 
   followTheLightEvent = (e) => {

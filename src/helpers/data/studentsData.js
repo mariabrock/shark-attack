@@ -208,11 +208,20 @@ const killAStudent = (studentId) => {
   deadStudent.isDead = true;
 };
 
-// const followTheLight = () => {};
+
+const followTheLight = (deadStudentId) => {
+  killAStudent(deadStudentId);
+  const deadStudents = dearlyDeparted();
+  this.setState({ deadStudents });
+  // eslint-disable-next-line no-use-before-define
+  const livingStudents = livingStudents();
+  this.setState({ livingStudents });
+};
 
 export default {
   getStudents,
   livingStudent,
   dearlyDeparted,
   killAStudent,
+  followTheLight,
 };
