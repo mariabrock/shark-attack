@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Screenshots
 ![Mainview](https://raw.githubusercontent.com/mariabrock/shark-attack/master/screenshots/homepage.PNG)
 ![Shark Tank](https://raw.githubusercontent.com/mariabrock/shark-attack/master/screenshots/shark-tank.PNG)
-![Graveyard]()
+![Graveyard](https://raw.githubusercontent.com/mariabrock/shark-attack/master/screenshots/graveyard.PNG)
 
 ## Available Scripts
 
