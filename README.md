@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Screenshots
+![Mainview](https://raw.githubusercontent.com/mariabrock/shark-attack/master/screenshots/homepage.PNG)
+![Shark Tank](https://raw.githubusercontent.com/mariabrock/shark-attack/master/screenshots/shark-tank.PNG)
+![Graveyard]()
+
 ## Available Scripts
 
 In the project directory, you can run:
