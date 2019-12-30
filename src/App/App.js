@@ -1,30 +1,41 @@
 import React from 'react';
 import './App.scss';
 
+
 import studentsData from '../helpers/data/studentsData';
 
 import SharkTank from '../components/SharkTank/SharkTank';
 import Graveyard from '../components/Graveyard/Graveyard';
+import SharkAttack from '../components/SharkAttack/SharkAttack';
 
 class App extends React.Component {
   state = {
-    livingStudents: [],
-    dearlyDeparted: [],
+    students: [],
   }
 
   componentDidMount() {
+    const students = studentsData.getStudents();
+    this.setState({ students });
+  }
+
+  followTheLightEvent = () => {
+    const { students } = this.state;
     const livingStudents = studentsData.livingStudents();
-    this.setState({ livingStudents });
-    const dearlyDeparted = studentsData.dearlyDeparted();
-    this.setState({ dearlyDeparted });
+    if (livingStudents.length >= 1) {
+      const selectedStudentIndex = Math.floor(Math.random() * livingStudents.length);
+      studentsData.followTheLight(livingStudents[selectedStudentIndex].id);
+      this.setState({ students });
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <button className="btn btn-primary">Shark Attack!</button>
-        <SharkTank livingStudents={this.state.livingStudents} />
-        <Graveyard dearlyDeparted={this.state.dearlyDeparted} />
+        <SharkAttack students={this.students} followTheLightEvent={this.followTheLightEvent} />
+        <div id="holdingDiv">
+          <SharkTank livingStudents={this.state.livingStudents} />
+          <Graveyard dearlyDeparted={this.state.dearlyDeparted} />
+        </div>
       </div>
     );
   }
