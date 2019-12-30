@@ -203,25 +203,14 @@ const dearlyDeparted = () => {
   return veryDead;
 };
 
-const killAStudent = (studentId) => {
+const followTheLight = (studentId) => {
   const deadStudent = students.find((student) => student.id === studentId);
-  deadStudent.isDead = true;
-};
-
-
-const followTheLight = (deadStudentId) => {
-  killAStudent(deadStudentId);
-  const deadStudents = dearlyDeparted();
-  this.setState({ deadStudents });
-  // eslint-disable-next-line no-use-before-define
-  const livingStudents = livingStudents();
-  this.setState({ livingStudents });
+  dearlyDeparted(deadStudent);
 };
 
 export default {
   getStudents,
   livingStudent,
   dearlyDeparted,
-  killAStudent,
   followTheLight,
 };

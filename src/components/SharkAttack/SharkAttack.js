@@ -1,23 +1,35 @@
-// import './SharkAttack.scss';
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-// import studentShape from '../../helpers/propz/studentTypes';
+// import studentShape from '../../helpers/propz/studentShape';
+import studentsData from '../../helpers/data/studentsData';
 
-// class SharkTank extends React.Component {
-// static propTypes = {
+class SharkAttack extends React.Component {
+    state = {
+      livingStudents: [],
+    };
+
+static propTypes = {
 //   students: this.propTypes.arrayOf(studentShape.studentShape),
-//   livingStudents: PropTypes.func,
-//   dearlyDeparted: PropTypes.func,
-//   followTheLight: PropTypes.func,
-// }
 
-// render() {
-//   return (
-//         <div className="shark-tank">
-//         </div>
-//   );
-// }
-// }
+  dearlyDeparted: PropTypes.func,
+  followTheLight: PropTypes.func,
+}
 
-// export default SharkTank;
+followTheLightEvent = (e) => {
+  e.preventDefault();
+  const { livingStudents } = this.state;
+  const random = Math.floor(Math.random() * (livingStudents.length));
+  console.log(random);
+  const oneLivingStudent = livingStudents[random];
+  studentsData.followTheLight(oneLivingStudent);
+}
+
+render() {
+  return (
+        <button className="btn btn-primary" onClick={this.followTheLightEvent}>Shark Attack!</button>
+  );
+}
+}
+
+export default SharkAttack;
