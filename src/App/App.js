@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import PropTypes from 'prop-types';
+
 
 import studentsData from '../helpers/data/studentsData';
 
@@ -10,25 +10,28 @@ import SharkAttack from '../components/SharkAttack/SharkAttack';
 
 class App extends React.Component {
   state = {
-    livingStudents: [],
-    dearlyDeparted: [],
-  }
-
-  static props = {
-    followTheLightEvent: PropTypes.func,
+    students: [],
   }
 
   componentDidMount() {
-    const livingStudents = studentsData.livingStudent();
-    this.setState({ livingStudents });
-    const dearlyDeparted = studentsData.dearlyDeparted();
-    this.setState({ dearlyDeparted });
+    const students = studentsData.getStudents();
+    this.setState({ students });
+  }
+
+  followTheLightEvent = () => {
+    const { students } = this.state;
+    const livingStudents = studentsData.livingStudents();
+    if (livingStudents.length >= 1) {
+      const selectedStudentIndex = Math.floor(Math.random() * livingStudents.length);
+      studentsData.followTheLight(livingStudents[selectedStudentIndex].id);
+      this.setState({ students });
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <SharkAttack followTheLightEvent={followTheLightEvent} />
+        <SharkAttack students={this.students} followTheLightEvent={this.followTheLightEvent} />
         <div id="holdingDiv">
           <SharkTank livingStudents={this.state.livingStudents} />
           <Graveyard dearlyDeparted={this.state.dearlyDeparted} />

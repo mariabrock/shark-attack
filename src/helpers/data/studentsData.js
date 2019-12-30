@@ -203,14 +203,14 @@ const dearlyDeparted = () => {
   return veryDead;
 };
 
-const followTheLight = (studentId) => {
-  const deadStudent = students.find((student) => student.id === studentId);
-  dearlyDeparted(deadStudent);
-};
+// const followTheLight = (studentId) => {
+//   const deadStudent = students.find((student) => student.id === studentId);
+//   dearlyDeparted(deadStudent);
+// };
 
 export default {
   getStudents,
   livingStudent,
   dearlyDeparted,
-  followTheLight,
+  // followTheLight,
 };
