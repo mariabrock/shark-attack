@@ -183,7 +183,7 @@ const students = [
 
 const getStudents = () => students;
 
-const livingStudent = () => {
+const livingStudents = () => {
   const notDead = []; // empty array
   students.forEach((student) => { // loop
     if (student.isDead === false) {
@@ -203,14 +203,14 @@ const dearlyDeparted = () => {
   return veryDead;
 };
 
-// const followTheLight = (studentId) => {
-//   const deadStudent = students.find((student) => student.id === studentId);
-//   dearlyDeparted(deadStudent);
-// };
+const followTheLight = (studentId) => {
+  const deadStudent = students.map((student) => student.id).indexOf(studentId); // finds the location of the student in the array
+  students[deadStudent].isDead = true;
+}; // changes the isDead boolean to true, makes student dead
 
 export default {
   getStudents,
-  livingStudent,
+  livingStudents,
   dearlyDeparted,
-  // followTheLight,
+  followTheLight,
 };
