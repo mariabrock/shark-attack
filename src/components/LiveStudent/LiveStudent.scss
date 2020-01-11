@@ -4,6 +4,37 @@
   flex-direction: row;
   justify-content: center;
   background-color:	#a1caf1;
-  margin: 1em;
-  left: 1em;
+  }
+
+  * {
+    .liveStudent {
+      width: 32%;
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media only screen and (max-width: 400px) {
+    .liveStudent {
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
+  }
+  
+  /* Tablet Styles */
+  @media only screen and (min-width: 401px) and (max-width: 960px) {
+    .liveStudent {
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
+  }
+  
+  /* Desktop Styles */
+  @media only screen and (min-width: 961px) {
+    .liveStudent {
+      width: 32%;
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
   }

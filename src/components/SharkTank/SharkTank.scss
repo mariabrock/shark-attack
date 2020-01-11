@@ -1,6 +1,38 @@
 h3 {
     display: flex;
     justify-content: left;
-    margin-left: 200px;
-    margin-top: 2em;
+    margin: 0.66% auto;
 }
+
+* {
+    .shark-tank {
+      width: 32%;
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media only screen and (max-width: 400px) {
+    .shark-tank {
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
+  }
+  
+  /* Tablet Styles */
+  @media only screen and (min-width: 401px) and (max-width: 960px) {
+    .shark-tank {
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
+  }
+  
+  /* Desktop Styles */
+  @media only screen and (min-width: 961px) {
+    .shark-tank {
+      width: 32%;
+      min-width: 200px;
+      margin: 0.66% auto;
+    }
+  }

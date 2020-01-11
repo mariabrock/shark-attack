@@ -29,7 +29,6 @@ class App extends React.Component {
   } // forces state to update when there is a change
 
   componentDidMount() {
-    // const { livingStudents, dearlyDeparted } = this.props;
     this.forceUpdate();
   }
 
