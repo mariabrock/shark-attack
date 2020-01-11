@@ -2,19 +2,20 @@ import './Graveyard.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import studentShape from '../../helpers/propz/studentShape';
-import studentsData from '../../helpers/data/studentsData';
+// import studentShape from '../../helpers/propz/studentShape';
+// import studentsData from '../../helpers/data/studentsData';
 
 import Gravestone from '../Gravestone/Gravestone';
 
 class Graveyard extends React.Component {
     static propTypes = {
-      students: PropTypes.arrayOf(studentShape.studentShape),
-      dearlyDeparted: PropTypes.func,
+      // students: PropTypes.arrayOf(studentShape.studentShape),
+      dearlyDeparted: PropTypes.array,
     }
 
     render() {
-      const gravestone = studentsData.dearlyDeparted().map((student) => (<Gravestone key={student.id} student={student} />));
+      const { dearlyDeparted } = this.props;
+      const gravestone = dearlyDeparted.map((student) => (<Gravestone key={student.id} student={student} />));
 
       return (
             <div className="graveyard">

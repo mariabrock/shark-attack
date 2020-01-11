@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import studentShape from '../../helpers/propz/studentShape';
-// import studentsData from '../../helpers/data/studentsData';
+import studentsData from '../../helpers/data/studentsData';
 
 class SharkAttack extends React.Component {
     state = {
-      livingStudents: [],
+      students: [],
     };
 
 static propTypes = {
-//   students: this.propTypes.arrayOf(studentShape.studentShape),
-
+  aliveStudents: PropTypes.array,
   dearlyDeparted: PropTypes.func,
-  followTheLight: PropTypes.func,
+  livingStudents: PropTypes.func,
+  forceUpdate: PropTypes.func,
+}
+
+followTheLightEvent = () => {
+  const { aliveStudents, forceUpdate } = this.props;
+  const attackedStudentId = aliveStudents[Math.floor(Math.random() * aliveStudents.length)].id;
+  studentsData.followTheLight(attackedStudentId);
+  forceUpdate(); // takes student that was attacked by the shark and forces the state to update
 }
 
 render() {
